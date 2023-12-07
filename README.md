@@ -89,6 +89,7 @@ Because the rendering using houdini involves non-free CG assets and softwares, t
 
 Output files locate in **./bin/<scene_name>/mypartio/**. Load them with Houdini 19.5 for rendering.
 
+The Houdini hip files locate in data/Houdini_scenes
 
 
 ## Extra
