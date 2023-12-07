@@ -1,0 +1,78 @@
+{
+  "Configuration": {
+    "timeStepSize": 0.001,
+    "numberOfStepsPerRenderUpdate": 2,
+    "particleRadius": 0.025,
+    "density0": 1000,
+    "simulationMethod": 4,
+    "gravitation": [ 0, -9.81, 0 ],
+    "cflMethod": 1,
+    "cflFactor": 1,
+    "cflMaxTimeStepSize": 0.005,
+    "maxIterations": 100,
+    "maxError": 0.1,
+    "maxIterationsV": 100,
+    "maxErrorV": 0.1,
+    "stiffness": 50000,
+    "exponent": 7,
+    "velocityUpdateMethod": 0,
+    "enableDivergenceSolver": true,
+    "boundaryHandlingMethod": 2
+  },
+  "Materials": [
+    {
+      "id": "Fluid",
+      "surfaceTension": 0.2,
+      "surfaceTensionMethod": 0,
+      "viscosity": 1,
+      "viscosityBoundary": 1,
+      "viscosityMethod": 7,
+      "viscoMaxIter": 200,
+      "viscoMaxError": 0.05
+    }
+  ],
+  "RigidBodies": [
+    {
+      "geometryFile": "../models/UnitBox.obj",
+      "translation": [ 0, -0.25, 0 ],
+      "rotationAxis": [ 1, 0, 0 ],
+      "rotationAngle": 0,
+      "scale": [ 5, 0.5, 5 ],
+      "color": [ 0.1, 0.4, 0.6, 1.0 ],
+      "isDynamic": false,
+      "isWall": false,
+      "mapInvert": false,
+      "mapThickness": 0.0,
+      "mapResolution": [ 30, 20, 30 ]
+    },
+    {
+      "geometryFile": "../models/hand.obj",
+      "translation": [ 1, 0.5, -1.5 ],
+      "rotationAxis": [ 0, 1, 0 ],
+      "rotationAngle": -20,
+      "scale": [ 0.2, 0.2, 0.2 ],
+      "color": [ 0.1, 0.4, 0.6, 1.0 ],
+      "isDynamic": false,
+      "isWall": false,
+      "mapInvert": false,
+      "mapThickness": 0.0,
+      "mapResolution": [ 20, 20, 20 ]
+    }
+  ],
+  "Emitters": [
+    {
+
+      "width": 1,
+      "translation": [ 0.1, 0.9, -0.4 ],
+      "rotationAxis": [ 1, 1, 0 ],
+      "rotationAngle": 3.1415926535897932384626433832795,
+      "velocity": 1,
+      "type": 1,
+      "emitStartTime": 0,
+      "emitEndTime": 30
+    }
+  ]
+}
+
+
+

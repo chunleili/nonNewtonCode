@@ -1,0 +1,223 @@
+{
+	"Configuration": 
+	{
+		"timeStepSize": 0.001,
+		"numberOfStepsPerRenderUpdate": 2,
+		"particleRadius": 0.025,
+		"density0": 1000, 
+		"simulationMethod": 4,		
+		"gravitation": [0,-9.81,0], 
+		"cflMethod": 1, 
+		"cflFactor": 1,
+		"cflMaxTimeStepSize": 0.005,
+		"maxIterations": 100,
+		"maxError": 0.1,
+		"maxIterationsV": 100,
+		"maxErrorV": 0.1,		
+		"stiffness": 50000,
+		"exponent": 7,
+		"velocityUpdateMethod": 0,
+		"enableDivergenceSolver": true,
+		"boundaryHandlingMethod": 2
+	},
+	"Materials": [
+		{
+			"id": "Newtonain1",
+			"colorField": "nonNewtonViscosity",
+			"surfaceTensionMethod": 7,
+			"viscosityMethod": 13,
+			"nonNewtonMethod": 0,
+			"viscoMaxError": 0.001,
+			"viscoMaxIter": 1000,
+			"viscosityBoundary": 0.1,
+			"viscosity0": 0.01
+		},
+		{
+			"id": "Newtonain2",
+			"colorField": "nonNewtonViscosity",
+			"surfaceTensionMethod": 7,
+			"viscosityMethod": 13,
+			"nonNewtonMethod": 0,
+			"viscoMaxError": 0.001,
+			"viscoMaxIter": 1000,
+			"viscosityBoundary": 0.1,
+			"viscosity0": 50.0
+		},
+		{
+			"id": "PowerLaw1",
+			"colorField": "nonNewtonViscosity",
+			"surfaceTensionMethod": 7,
+			"viscosityMethod": 13,
+			"nonNewtonMethod": 1,
+			"viscoMaxError": 0.001,
+			"viscoMaxIter": 1000,
+			"viscosityBoundary": 0.1,
+			"viscosity0": 50.0,
+			"viscosity_inf": 0.01,
+			"power_index":0.667,
+			"consistency_index":20.0
+		}
+		,
+		{
+			"id": "PowerLaw2",
+			"colorField": "nonNewtonViscosity",
+			"surfaceTensionMethod": 7,
+			"viscosityMethod": 13,
+			"nonNewtonMethod": 1,
+			"viscoMaxError": 0.001,
+			"viscoMaxIter": 1000,
+			"viscosityBoundary": 0.1,
+			"viscosity0": 50.0,
+			"viscosity_inf": 0.01,
+			"power_index":1.1,
+			"consistency_index":20.0
+		}
+		,
+		{
+			"id": "Cross",
+			"colorField": "nonNewtonViscosity",
+			"surfaceTensionMethod": 7,
+			"viscosityMethod": 13,
+			"nonNewtonMethod": 2,
+			"viscoMaxError": 0.001,
+			"viscoMaxIter": 1000,
+			"viscosityBoundary": 0.1,
+			"viscosity0": 50.0,
+			"viscosity_inf": 0.01,
+			"power_index":0.667,
+			"consistency_index":0.04
+		},
+		{
+			"id": "Casson",
+			"colorField": "nonNewtonViscosity",
+			"surfaceTensionMethod": 7,
+			"viscosityMethod": 13,
+			"nonNewtonMethod": 3,
+			"viscoMaxError": 0.001,
+			"viscoMaxIter": 1000,
+			"viscosityBoundary": 0.1,
+			"viscosity0": 50.0,
+			"viscosity_inf": 0.01,
+			"power_index":0.667,
+			"consistency_index":0.04,
+			"muC": 0.3,
+			"yieldStress": 0.1
+		},
+		{
+			"id": "Carreau",
+			"colorField": "nonNewtonViscosity",
+			"surfaceTensionMethod": 7,
+			"viscosityMethod": 13,
+			"nonNewtonMethod": 4,
+			"viscoMaxError": 0.01,
+			"viscoMaxIter": 1000,
+			"viscosityBoundary": 0.1,
+			"viscosity0": 50.0,
+			"viscosity_inf": 0.01,
+			"power_index":0.1,
+			"consistency_index":0.2,
+			"muC": 0.3,
+			"yieldStress": 0.1
+		},
+		{
+			"id": "Bingham",
+			"colorField": "nonNewtonViscosity",
+			"surfaceTensionMethod": 7,
+			"viscosityMethod": 13,
+			"nonNewtonMethod": 5,
+			"viscoMaxError": 0.01,
+			"viscoMaxIter": 1000,
+			"viscosityBoundary": 0.1,
+			"viscosity0": 50.0,
+			"viscosity_inf": 0.01,
+			"power_index":0.1,
+			"consistency_index":0.2,
+			"muC": 0.3,
+			"yieldStress": 0.1,
+			"criticalStrainRate": 1.0
+		},
+		{
+			"id": "HerschelBulkley",
+			"colorField": "nonNewtonViscosity",
+			"surfaceTensionMethod": 7,
+			"viscosityMethod": 13,
+			"nonNewtonMethod": 6,
+			"viscoMaxError": 0.01,
+			"viscoMaxIter": 1000,
+			"viscosityBoundary": 0.1,
+			"viscosity0": 50.0,
+			"viscosity_inf": 0.01,
+			"power_index":0.1,
+			"consistency_index":0.2,
+			"muC": 0.3,
+			"yieldStress": 0.1,
+			"criticalStrainRate": 1.0
+		}
+	],
+	"RigidBodies": [
+		{
+			"geometryFile": "../models/ramp.obj",
+			"translation": [-8,0,0],
+			"rotationAxis": [0, 1, 0],
+			"rotationAngle": 0,
+			"scale": [3, 1, 1], 
+			"color": [0.1, 0.4, 0.6, 1.0], 
+			"isDynamic": false,
+			"isWall": false,
+			"mapInvert": false, 
+			"mapThickness": 0.0,
+			"mapResolution": [20,20,20]
+		}
+	],
+	"FluidModels": [
+		{
+			"id": "Newtonain1",
+			"particleFile": "../models/armadillo.bhclassic",
+			"translation": [0, 0, 0]
+		},
+		{
+			"id": "Newtonain2",
+			"particleFile": "../models/armadillo.bhclassic",
+			"translation": [-2, 0, 0]
+		},
+		{
+			"id": "PowerLaw1",
+			"particleFile": "../models/armadillo.bhclassic",
+			"translation": [-4, 0, 0]
+		},
+		{
+			"id": "PowerLaw2",
+			"particleFile": "../models/armadillo.bhclassic",
+			"translation": [-6, 0, 0]
+		},
+		{
+			"id": "Cross",
+			"particleFile": "../models/armadillo.bhclassic",
+			"translation": [-8, 0, 0]
+		},
+		{
+			"id": "Casson",
+			"particleFile": "../models/armadillo.bhclassic",
+			"translation": [-10, 0, 0]
+		},
+		{
+			"id": "Carreau",
+			"particleFile": "../models/armadillo.bhclassic",
+			"translation": [-12, 0, 0]
+		}
+		,
+		{
+			"id": "Bingham",
+			"particleFile": "../models/armadillo.bhclassic",
+			"translation": [-14, 0, 0]
+		},
+		{
+			"id": "HerschelBulkley",
+			"particleFile": "../models/armadillo.bhclassic",
+			"translation": [-16, 0, 0]
+		}
+	]
+}
+
+
+

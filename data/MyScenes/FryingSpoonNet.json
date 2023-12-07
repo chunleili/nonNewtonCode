@@ -1,0 +1,83 @@
+{
+	"Configuration": 
+	{
+		"particleRadius": 0.025,
+		"numberOfStepsPerRenderUpdate": 4,
+		"density0": 1000, 
+		"simulationMethod": 4,
+		"gravitation": [0,-9.81,0], 
+		"timeStepSize": 0.005,
+		"cflMethod": 1, 
+		"cflFactor": 1,
+		"cflMaxTimeStepSize": 0.005,
+		"maxIterations": 100,
+		"maxError": 0.05,
+		"maxIterationsV": 100,
+		"maxErrorV": 0.1,		
+		"stiffness": 50000,
+		"exponent": 7,
+		"velocityUpdateMethod": 0,
+		"enableDivergenceSolver": true,
+		"particleAttributes": "",
+		"boundaryHandlingMethod": 2,
+		"pauseAt": 5.0,
+		"stopAt": 5.0,
+		"noGUI": true,
+		"enableMyPartioExport": true
+	},
+	"Materials": [
+		{
+			"id": "fluid",
+			"colorField": "viscosity",
+			"surfaceTensionMethod": 7,
+			"viscosityMethod": 13,
+			"nonNewtonMethod": 6,
+			"viscoMaxError": 0.01,
+			"viscoMaxIter": 1000,
+			"viscosityBoundary": 0.5,
+			"viscosity0": 1.0,
+			"viscosity_inf": 0.01,
+			"power_index":1.1,
+			"consistency_index":1.0,
+			"muC": 0.3,
+			"yieldStress": 2,
+			"criticalStrainRate": 5e-4
+		}
+	],
+	"RigidBodies": [
+		{
+			"geometryFile": "../models/UnitBox.obj",
+			"translation": [0,0,0],
+			"rotationAxis": [1, 0, 0],
+			"rotationAngle": 0,
+			"scale": [5,0.6,5],
+			"color": [0.1, 0.4, 0.6, 1.0], 
+			"isDynamic": false,
+			"isWall": true,
+			"mapInvert": false, 
+			"mapThickness": 0.0,
+			"mapResolution": [20,30,20]
+		},
+		{
+			"geometryFile": "../models/frying_spoon_net.obj",
+			"translation": [0,0,0],
+			"rotationAxis": [1, 0, 0],
+			"rotationAngle": 0,
+			"scale": [1, 1, 1],
+			"color": [0.75, 0.75, 0.75, 1.0], 
+			"isDynamic": false,
+			"isWall": false,
+			"mapThickness": 0.1,
+			"mapResolution": [10,10,10]
+		}
+	],
+	"FluidModels": [
+		{
+			"id": "fluid",
+			"particleFile": "../models/ThreeBalls.ply"
+		}
+	]
+}
+
+
+

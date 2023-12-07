@@ -1,0 +1,82 @@
+{
+	"Configuration": 
+	{
+		"timeStepSize": 0.001,
+		"particleRadius": 0.025,
+		"numberOfStepsPerRenderUpdate": 2,
+		"density0": 1000, 
+		"simulationMethod": 4,
+		"gravitation": [0,-9.81,0], 
+		"cflMethod": 0, 
+		"cflFactor": 1,
+		"cflMaxTimeStepSize": 0.005,
+		"maxIterations": 100,
+		"maxError": 0.01,
+		"maxIterationsV": 100,
+		"maxErrorV": 0.1,		
+		"stiffness": 50000,
+		"exponent": 7,
+		"velocityUpdateMethod": 0,
+		"enableDivergenceSolver": true,
+		"boundaryHandlingMethod": 2,
+		"enableZSort": false
+	},
+	"Materials": [
+		{
+			"id": "Fluid",
+			"elasticityMethod": 4,
+			"viscosity": 0.01,
+			"viscosityMethod": 1,
+			"surfaceTension": 0.02,
+			"surfaceTensionMethod": 0,
+			"youngsModulus": 250000.0,
+			"poissonsRatio": 0.33, 
+			"alpha": 0.1
+		}
+	],
+	"RigidBodies": [
+		{
+			"geometryFile": "../models/UnitBox.obj",
+			"translation": [0,2.5,0],
+			"rotationAxis": [1, 0, 0],
+			"rotationAngle": 0,
+			"scale": [3, 5, 3],
+			"color": [0.1, 0.4, 0.6, 1.0], 
+			"isDynamic": false,
+			"isWall": true,
+			"mapInvert": true, 
+			"mapThickness": 0.0,
+			"mapResolution": [20,30,20]
+		},
+		{
+			"id": 2,
+			"geometryFile": "../models/sphere.obj",
+			"isDynamic": 1, 
+			"density": 1200, 
+			"translation": [0,1,2],
+			"rotationAxis": [1, 0, 0],
+			"rotationAngle": 0.0,
+			"scale": [0.2, 0.2, 0.2],
+			"velocity": [0,0,-20],
+			"restitution" : 0.6,
+			"friction" : 0.2,
+			"color": [0.3, 0.5, 0.8, 1.0], 
+			"collisionObjectType": 1,
+			"collisionObjectScale": [0.2, 0.2, 0.2],
+			"mapInvert": false, 
+			"mapThickness": 0.0,
+			"mapResolution": [20,20,20]
+		}
+	],
+	"FluidBlocks": [
+		{
+			"denseMode": 0,
+			"start": [-1, 0.0, -0.1],
+			"end": [1, 2, 0.1],
+			"translation": [0,0,0]
+		}
+	]
+}
+
+
+

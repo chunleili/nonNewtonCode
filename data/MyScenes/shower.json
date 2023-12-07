@@ -1,0 +1,82 @@
+{
+	"Configuration": 
+	{
+		"particleRadius": 0.025,
+		"numberOfStepsPerRenderUpdate": 4,
+		"density0": 1000, 
+		"simulationMethod": 4,
+		"gravitation": [0,-9.81,0], 
+		"timeStepSize": 0.005,
+		"cflMethod": 1, 
+		"cflFactor": 1,
+		"cflMaxTimeStepSize": 0.005,
+		"maxIterations": 100,
+		"maxError": 0.05,
+		"maxIterationsV": 100,
+		"maxErrorV": 0.1,		
+		"stiffness": 50000,
+		"exponent": 7,
+		"velocityUpdateMethod": 0,
+		"enableDivergenceSolver": true,
+		"particleAttributes": "temperature;velocity",
+		"boundaryHandlingMethod": 0,
+		"enableZSort": false,
+		"pauseAt": 5.0,
+		"stopAt": 5.0,
+		"enableMyPartioExport": true
+	},
+	"Materials": [
+		{
+			"id": "Fluid",
+			"surfaceTensionMethod": 5,
+			"colorField": "temperature",
+			"renderMaxValue": 1.0,
+			"boxMax": [1,0.0,1],
+			"boxMin": [-1,0.0,-1],
+			"viscosity0": 1000,
+			"viscosity": 1.0,
+			"viscosityMethod": 8,
+			"meltSurface": false,
+			"meltbox": false,
+			"diffusivity": 100.0,
+			"emitterReuseParticles": false,
+			"hotWaterTemp": 100.0
+		}
+	],
+	"RigidBodies": [
+		{
+			"geometryFile": "../models/UnitBox.obj",
+			"translation": [0,1.5,0],
+			"rotationAxis": [1, 0, 0],
+			"rotationAngle": 0,
+			"scale": [4, 3, 1.5],
+			"color": [0.1, 0.4, 0.6, 1.0], 
+			"isDynamic": false,
+			"isWall": true,
+			"mapInvert": true, 
+			"mapThickness": 0.0,
+			"mapResolution": [40,30,15]
+		}
+	],
+	"Emitters": [
+		{
+			"material": "Fluid",
+			"width": 8, 
+			"height": 3, 
+			"translation": [-2,1.2,0.0],
+			"rotationAxis": [1, 0, 0],
+			"rotationAngle": 0,
+			"velocity": 2, 
+			"type": 0,
+			"emitEndTime": 2
+		}
+	],
+	"FluidModels": [
+		{
+			"id" : "Fluid",
+			"particleFile": "../models/bunny.bhclassic",
+			"translation": [0,0.3,0]
+		}
+	]
+
+}

@@ -1,0 +1,7 @@
+add_subdirectory(PartioViewer)
+add_subdirectory(FoamGenerator)
+add_subdirectory(SurfaceSampling)
+add_subdirectory(VolumeSampling)
+add_subdirectory(partio2vtk)
+add_subdirectory(MeshSkinning)
+

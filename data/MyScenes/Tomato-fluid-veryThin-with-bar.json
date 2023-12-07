@@ -1,0 +1,76 @@
+{
+	"Configuration": 
+	{
+		"timeStepSize": 0.001,
+		"particleRadius": 0.025,
+		"numberOfStepsPerRenderUpdate": 2,
+		"density0": 1000, 
+		"simulationMethod": 4,
+		"gravitation": [0,-9.81,0], 
+		"cflMethod": 0, 
+		"cflFactor": 1,
+		"cflMaxTimeStepSize": 0.005,
+		"maxIterations": 100,
+		"maxError": 0.01,
+		"maxIterationsV": 100,
+		"maxErrorV": 0.1,		
+		"stiffness": 50000,
+		"exponent": 7,
+		"velocityUpdateMethod": 0,
+		"enableDivergenceSolver": true,
+		"boundaryHandlingMethod": 2,
+		"enableZSort": false,
+		"stopAt": 10.0,
+		"noGUI": true,
+		"enableMyPartioExport": true,
+		"enableObjectSplitting": false,
+		"dataExportFPS ":10,
+		"useCarriedPartioData": true
+	},
+	"Materials": [
+		{
+			"id": "fluid",
+			"surfaceTensionMethod": 7,
+			"viscosityMethod": 13,
+			"nonNewtonMethod": 0,
+			"viscoMaxError": 0.001,
+			"viscoMaxIter": 1000,
+			"viscosity0": 0.1,
+			"viscosity": 0.01,
+			"viscosity_inf": 0.001,
+			"power_index":0.667,
+			"consistency_index":0.001,
+			"muC": 0.3,
+			"yieldStress": 0.1,
+			"criticalStrainRate": 1e-10
+		}
+	],
+	"RigidBodies": [
+		{
+			"geometryFile": "../models/UnitBox.obj",
+			"translation": [0,-1,0],
+			"rotationAxis": [1, 0, 0],
+			"rotationAngle": 0,
+			"scale": [15,0.5,15],
+			"color": [0.1, 0.4, 0.6, 1.0], 
+			"isDynamic": false,
+			"isWall": true,
+			"mapInvert": false, 
+			"mapThickness": 0.0,
+			"mapResolution": [20,30,20]
+		},
+		{
+			"geometryFile": "../models/barrier.obj",
+			"isDynamic": false,
+			"isWall": true,
+			"mapInvert": true
+		}
+	],
+	"FluidModels": [
+		{
+			"id": "fluid",
+			"particleFile": "../models/tomato-fluid-dense.bhclassic",
+			"translation": [0,5,0]
+		}
+	]
+}

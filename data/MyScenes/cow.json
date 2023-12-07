@@ -1,0 +1,71 @@
+{
+	"Configuration": 
+	{
+		"timeStepSize": 1e-4,
+		"particleRadius": 0.00199,
+		"simulationMethod": 7,
+		"numberOfStepsPerRenderUpdate": 1,
+		"gravitation": [0,-9.81,0],
+		"cflMethod": 1, 
+		"cflFactor": 1.0,
+		"cflMaxTimeStepSize": 1e-3,
+		"maxIterations": 100,
+		"maxError": 0.05,
+		"maxIterationsV": 100,
+		"maxErrorV": 0.1,		
+		"velocityUpdateMethod": 0,
+		"enableDivergenceSolver": true,
+		"boundaryHandlingMethod": 2,
+		"dataExportFPS": 100,
+		"pauseAt": 1.0,
+		"particleAttributes": "velocity;",
+		"dampVelocityFlag": false,
+		"dampVelocityFactor": 0.01,
+		"smoothVelocityFlag": false,
+		"smoothVelocityFactor": 0.1,
+		"enableMyPartioExport": true
+	},
+	"Materials": [
+		{
+			"id": "fluid",
+			"colorField": "strainRateNorm",
+			"surfaceTensionMethod": 7,
+			"viscosityMethod": 13,
+			"nonNewtonMethod": 6,
+			"viscoMaxError": 0.1,
+			"viscoMaxIter": 100,
+			"viscosityBoundary": 10,
+			"viscosity0": 20,
+			"viscosity_inf": 0.1,
+			"power_index":0.9,
+			"consistency_index":1.0,
+			"muC": 0.3,
+			"yieldStress": 2,
+			"criticalStrainRate": 5e-4,
+			"changeWithTimeFlag": false,
+			"coeffC": 5.0,
+			"elasticityMethod": 0
+		}
+	],
+	"RigidBodies": [
+		{
+			"geometryFile": "../models/UnitBox.obj",
+			"translation": [0,1,0],
+			"rotationAxis": [1, 0, 0],
+			"rotationAngle": 0,
+			"scale": [2, 2, 2],
+			"color": [0.1, 0.4, 0.6, 1.0], 
+			"isDynamic": false,
+			"isWall": true,
+			"mapInvert": true, 
+			"mapThickness": 0.0,
+			"mapResolution": [30,30,20]
+		}
+	],
+	"FluidModels": [
+		{
+			"id":"fluid",
+			"particleFile": "../models/cow.bhclassic"
+		}
+	]
+}

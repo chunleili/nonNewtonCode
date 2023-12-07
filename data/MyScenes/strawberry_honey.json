@@ -1,0 +1,82 @@
+{
+	"Configuration": 
+	{
+		"timeStepSize": 0.001,
+		"numberOfStepsPerRenderUpdate": 2,
+		"particleRadius": 0.025,
+		"density0": 1000, 
+		"simulationMethod": 4,		
+		"gravitation": [0,-9.81,0], 
+		"cflMethod": 1, 
+		"cflFactor": 1,
+		"cflMaxTimeStepSize": 0.005,
+		"maxIterations": 100,
+		"maxError": 0.1,
+		"maxIterationsV": 100,
+		"maxErrorV": 0.1,		
+		"stiffness": 50000,
+		"exponent": 7,
+		"velocityUpdateMethod": 0,
+		"enableDivergenceSolver": true,
+		"boundaryHandlingMethod": 2,
+		"stopAt":16.0,
+		"enableMyPartioExport": true,
+		"dataExportFPS": 25
+	},
+	"Materials": [
+		{
+			"id": "Fluid",
+			"surfaceTension": 0.2,
+			"surfaceTensionMethod": 0,
+			"viscosity": 15,
+			"viscosityBoundary": 15,
+			"viscosityMethod": 7,
+			"viscoMaxIter": 200, 
+			"viscoMaxError": 0.05,
+			"maxEmitterParticles": 1000000,
+			"emitterReuseParticles": false
+		}
+	],
+	"RigidBodies": [
+		{
+			"geometryFile": "../models/UnitBox.obj",
+			"translation": [0,-0.25,0],
+			"rotationAxis": [1, 0, 0],
+			"rotationAngle": 0,
+			"scale": [15, 0.5, 15],
+			"color": [0.1, 0.4, 0.6, 1.0], 
+			"isDynamic": false,
+			"isWall": false,
+			"mapInvert": false, 
+			"mapThickness": 0.0,
+			"mapResolution": [30,20,30]
+		},
+		{
+			"geometryFile": "../models/strawberry_for_sim.obj",
+			"scale":[1,1,1],
+			"rotationAxis": [0, 1, 0],
+			"rotationAngle": 0,
+			"color": [0.1, 0.4, 0.6, 1.0], 
+			"isDynamic": false,
+			"isWall": false,
+			"mapInvert": false, 
+			"mapThickness": 0.0,
+			"mapResolution": [20,20,20]
+		}
+	],
+	"Emitters": [
+		{
+			"id":"Fluid",
+			"width": 8, 
+			"translation": [1.0,5,0.2],
+			"rotationAxis": [0, 0, 1],
+			"rotationAngle": -1.57,
+			"velocity": 1.66,
+			"type": 1,
+			"emitEndTime": 16
+		}
+	]
+}
+
+
+

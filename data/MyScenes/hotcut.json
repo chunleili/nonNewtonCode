@@ -1,0 +1,78 @@
+{
+	"Configuration": 
+	{
+		"particleRadius": 0.025,
+		"numberOfStepsPerRenderUpdate": 4,
+		"density0": 1000, 
+		"simulationMethod": 4,
+		"gravitation": [0,-9.81,0], 
+		"timeStepSize": 0.005,
+		"cflMethod": 1, 
+		"cflFactor": 1,
+		"cflMaxTimeStepSize": 0.005,
+		"maxIterations": 100,
+		"maxError": 0.05,
+		"maxIterationsV": 100,
+		"maxErrorV": 0.1,		
+		"stiffness": 50000,
+		"exponent": 7,
+		"velocityUpdateMethod": 0,
+		"enableDivergenceSolver": true,
+		"particleAttributes": "",
+		"boundaryHandlingMethod": 0,
+		"enableZSort": false,
+		"stopAt": 20.0,
+		"enableMyPartioExport":true,
+		"enableObjectSplitting": true
+	},
+	"Materials": [
+		{
+			"id": "Fluid",
+			"surfaceTensionMethod": 5,
+			"colorField": "temperature",
+			"renderMaxValue": 1.0,
+			"boxMax": [1,0.05,1],
+			"boxMin": [-1,0.0,-1],
+			"viscosity0": 20.0,
+			"viscosity": 20.0,
+			"viscosityMethod": 8,
+			"meltSurface": false,
+			"meltbox": true,
+			"diffusivity": 100.0,
+			"hotWaterTemp": 100.0,
+			"viscoMaxIter":1000
+		}
+	],
+	"RigidBodies": [
+		{
+			"geometryFile": "../models/hot_cut_bcylinder.obj",
+			"color": [0.1, 0.4, 0.6, 1.0], 
+			"translation": [0,0,0],
+			"scale": [1.0, 1.0, 1.0],
+			"isDynamic": false,
+			"isWall": true,
+			"mapInvert": true, 
+			"mapThickness": 0.0,
+			"mapResolution": [10,10,10]
+		},
+		{
+			"geometryFile": "../models/hot_cut_cross_plane.obj",
+			"color": [0.1, 0.4, 0.6, 1.0], 
+			"translation": [0,0,0],
+			"scale": [1.0, 1.0, 1.0],
+			"isDynamic": false,
+			"isWall": false,
+			"mapInvert": false, 
+			"mapThickness": 0.0,
+			"mapResolution": [10,10,10]
+		}
+	],
+	"FluidModels": [
+		{
+			"id" : "Fluid",
+			"particleFile": "../models/hot_cut_bunny_sampled.bhclassic",
+			"translation": [0,0.1,0]
+		}
+	]
+
+}

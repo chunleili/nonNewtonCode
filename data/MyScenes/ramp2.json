@@ -1,0 +1,115 @@
+{
+	"Configuration": 
+	{
+		"timeStepSize": 0.001,
+		"numberOfStepsPerRenderUpdate": 2,
+		"particleRadius": 0.025,
+		"density0": 1000, 
+		"simulationMethod": 4,		
+		"gravitation": [0,-9.81,0], 
+		"cflMethod": 1, 
+		"cflFactor": 1,
+		"cflMaxTimeStepSize": 0.005,
+		"maxIterations": 100,
+		"maxError": 0.1,
+		"maxIterationsV": 100,
+		"maxErrorV": 0.1,		
+		"stiffness": 50000,
+		"exponent": 7,
+		"velocityUpdateMethod": 0,
+		"enableDivergenceSolver": true,
+		"boundaryHandlingMethod": 2,
+		"stopAt":10.0,
+		"enableMyPartioExport": true
+
+	},
+	"Materials": [
+		{
+			"id": "Cross",
+			"colorField": "nonNewtonViscosity",
+			"surfaceTensionMethod": 7,
+			"viscosityMethod": 13,
+			"nonNewtonMethod": 2,
+			"viscoMaxError": 0.001,
+			"viscoMaxIter": 1000,
+			"viscosityBoundary": 0.1,
+			"viscosity0": 10.0,
+			"viscosity_inf": 0.01,
+			"power_index":0.667,
+			"consistency_index":1.0
+		},
+		{
+			"id": "Casson",
+			"colorField": "nonNewtonViscosity",
+			"surfaceTensionMethod": 7,
+			"viscosityMethod": 13,
+			"nonNewtonMethod": 3,
+			"viscoMaxError": 0.001,
+			"viscoMaxIter": 1000,
+			"viscosityBoundary": 0.1,
+			"viscosity0": 10.0,
+			"viscosity_inf": 0.01,
+			"power_index":0.667,
+			"consistency_index":0.04,
+			"muC": 1.0,
+			"yieldStress": 10.0
+		},
+		{
+			"id": "Carreau",
+			"colorField": "nonNewtonViscosity",
+			"surfaceTensionMethod": 7,
+			"viscosityMethod": 13,
+			"nonNewtonMethod": 4,
+			"viscoMaxError": 0.01,
+			"viscoMaxIter": 1000,
+			"viscosityBoundary": 0.1,
+			"viscosity0": 10.0,
+			"viscosity_inf": 0.01,
+			"power_index":0.2,
+			"consistency_index":0.1,
+			"muC": 0.3,
+			"yieldStress": 0.1
+		}
+	],
+	"RigidBodies": [
+		{
+			"geometryFile": "../models/ramp.obj",
+			"translation": [-8,0,0],
+			"rotationAxis": [0, 1, 0],
+			"rotationAngle": 0,
+			"scale": [3, 1, 1], 
+			"color": [0.1, 0.4, 0.6, 1.0], 
+			"isDynamic": false,
+			"isWall": false,
+			"mapInvert": false, 
+			"mapThickness": 0.0,
+			"mapResolution": [40,40,40]
+		}
+	],
+	"FluidModels": [
+		{
+			"id": "Cross",
+			"particleFile": "../models/armadillo.bhclassic",
+			"rotationAxis": [1, 0, 0],
+			"rotationAngle": 0,
+			"translation": [0, 0, 0]
+		},
+		{
+			"id": "Casson",
+			"particleFile": "../models/armadillo.bhclassic",
+			"rotationAxis": [1, 0, 0],
+			"rotationAngle": 0,
+			"translation": [-5, 0, 0]
+		},
+		{
+			"id": "Carreau",
+			"particleFile": "../models/armadillo.bhclassic",
+			"rotationAxis": [1, 0, 0],
+			"rotationAngle": 0,
+			"translation": [-10, 0, 0]
+		}
+	]
+}
+
+
+
