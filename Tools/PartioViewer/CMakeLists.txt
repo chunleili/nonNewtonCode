@@ -16,19 +16,20 @@ if (USE_IMGUI)
 	source_group("Header Files\\GUI\\imgui" FILES ${GUI_HEADER_FILES})
 	source_group("Source Files\\GUI\\imgui" FILES ${GUI_SOURCE_FILES})
 else()
-	include(${PROJECT_SOURCE_DIR}/GUI/TweakBar/CMakeLists.txt)
-	set(VIEWER_LINK_LIBRARIES AntTweakBar glfw SPlisHSPlasH)
-	set(VIEWER_DEPENDENCIES AntTweakBar glfw SPlisHSPlasH CopySPlisHSPlasHShaders)
+	message("TweakBar has been removed!")
+	# include(${PROJECT_SOURCE_DIR}/GUI/TweakBar/CMakeLists.txt)
+	# set(VIEWER_LINK_LIBRARIES AntTweakBar glfw SPlisHSPlasH)
+	# set(VIEWER_DEPENDENCIES AntTweakBar glfw SPlisHSPlasH CopySPlisHSPlasHShaders)
 
-	set(GUI_SOURCE_FILES 
-		GUI/TweakBar/PartioViewer_GUI_TweakBar.cpp
-	)
-	set(GUI_HEADER_FILES
-		GUI/TweakBar/PartioViewer_GUI_TweakBar.h
-	)
+	# set(GUI_SOURCE_FILES 
+	# 	GUI/TweakBar/PartioViewer_GUI_TweakBar.cpp
+	# )
+	# set(GUI_HEADER_FILES
+	# 	GUI/TweakBar/PartioViewer_GUI_TweakBar.h
+	# )
 
-	source_group("Header Files\\GUI\\TweakBar" FILES ${GUI_HEADER_FILES})
-	source_group("Source Files\\GUI\\TweakBar" FILES ${GUI_SOURCE_FILES})
+	# source_group("Header Files\\GUI\\TweakBar" FILES ${GUI_HEADER_FILES})
+	# source_group("Source Files\\GUI\\TweakBar" FILES ${GUI_SOURCE_FILES})
 endif()
 
 if(WIN32)

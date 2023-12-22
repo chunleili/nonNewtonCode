@@ -18,22 +18,23 @@ if (USE_IMGUI)
 	source_group("Header Files\\GUI\\imgui" FILES ${GUI_HEADER_FILES})
 	source_group("Source Files\\GUI\\imgui" FILES ${GUI_SOURCE_FILES})
 else()
-	include(${PROJECT_SOURCE_DIR}/GUI/TweakBar/CMakeLists.txt)
-	set(SIMULATION_LINK_LIBRARIES AntTweakBar glfw SPlisHSPlasH ${PBD_LIBRARIES} PBD_includes)
-	# set(SIMULATION_DEPENDENCIES AntTweakBar glfw SPlisHSPlasH Ext_PBD CopySPlisHSPlasHShaders CopyPBDShaders CopyEmitterModels)
-	set(SIMULATION_DEPENDENCIES AntTweakBar glfw SPlisHSPlasH Ext_PBD copy_all_SPlisHSPlasH)
+	message("TweakBar has been removed! Please use imgui")
+	# include(${PROJECT_SOURCE_DIR}/GUI/TweakBar/CMakeLists.txt)
+	# set(SIMULATION_LINK_LIBRARIES AntTweakBar glfw SPlisHSPlasH ${PBD_LIBRARIES} PBD_includes)
+	# # set(SIMULATION_DEPENDENCIES AntTweakBar glfw SPlisHSPlasH Ext_PBD CopySPlisHSPlasHShaders CopyPBDShaders CopyEmitterModels)
+	# set(SIMULATION_DEPENDENCIES AntTweakBar glfw SPlisHSPlasH Ext_PBD copy_all_SPlisHSPlasH)
 	
-	set(GUI_SOURCE_FILES 
-		${PROJECT_SOURCE_DIR}/Simulator/GUI/TweakBar/Simulator_GUI_TweakBar.cpp
-		PositionBasedDynamicsWrapper/PBD_Simulator_GUI_TweakBar.cpp
-	)
-	set(GUI_HEADER_FILES
-		${PROJECT_SOURCE_DIR}/Simulator/GUI/TweakBar/Simulator_GUI_TweakBar.h
-		PositionBasedDynamicsWrapper/PBD_Simulator_GUI_TweakBar.h
-	)
+	# set(GUI_SOURCE_FILES 
+	# 	${PROJECT_SOURCE_DIR}/Simulator/GUI/TweakBar/Simulator_GUI_TweakBar.cpp
+	# 	PositionBasedDynamicsWrapper/PBD_Simulator_GUI_TweakBar.cpp
+	# )
+	# set(GUI_HEADER_FILES
+	# 	${PROJECT_SOURCE_DIR}/Simulator/GUI/TweakBar/Simulator_GUI_TweakBar.h
+	# 	PositionBasedDynamicsWrapper/PBD_Simulator_GUI_TweakBar.h
+	# )
 	
-	source_group("Header Files\\GUI\\TweakBar" FILES ${GUI_HEADER_FILES})
-	source_group("Source Files\\GUI\\TweakBar" FILES ${GUI_SOURCE_FILES})
+	# source_group("Header Files\\GUI\\TweakBar" FILES ${GUI_HEADER_FILES})
+	# source_group("Source Files\\GUI\\TweakBar" FILES ${GUI_SOURCE_FILES})
 endif()
 
 

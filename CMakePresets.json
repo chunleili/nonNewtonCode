@@ -21,7 +21,8 @@
             "name": "vs2022-Rel",
             "description": "VS 2022 Release",
             "configurePreset": "vs2022",
-            "configuration": "Release"
+            "configuration": "Release",
+            "targets":"SPHSimulator"
         },
         {
             "name": "vs2019-Rel",
