@@ -91,6 +91,8 @@ Output files locate in **./bin/<scene_name>/mypartio/**. Load them with Houdini 
 
 The Houdini hip files locate in data/Houdini_scenes
 
+## Note
+Some may encounter the compiling issues when using the latest vs2022(version 17.8.3), which are related to partio and antTweakBar. But do not worry about that,  these will not interfere with the normal running of the code.
 
 ## Extra
 This code is based on the Jan Bender's: https://github.com/InteractiveComputerGraphics/SPlisHSPlasH 

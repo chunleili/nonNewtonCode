@@ -21,25 +21,32 @@
             "name": "vs2022-Rel",
             "description": "VS 2022 Release",
             "configurePreset": "vs2022",
-            "configuration": "Release"
+            "configuration": "Release",
+            "targets": "SPHSimulator"
         },
         {
             "name": "vs2019-Rel",
             "description": "VS 2019 Release",
             "configurePreset": "vs2019",
-            "configuration": "Release"
+            "configuration": "Release",
+            "targets": "SPHSimulator"
+
         },
         {
             "name": "vs2022-Debug",
             "description": "VS 2022 Debug",
             "configurePreset": "vs2022",
-            "configuration": "Debug"
+            "configuration": "Debug",
+            "targets": "SPHSimulator"
+
         },
         {
             "name": "vs2019-Debug",
             "description": "VS 2019 Debug",
             "configurePreset": "vs2019",
-            "configuration": "Debug"
+            "configuration": "Debug",
+            "targets": "SPHSimulator"
+
         }
     ]
 }
