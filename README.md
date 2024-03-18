@@ -6,6 +6,12 @@ Authors: Chunlei Li, Yang Gao , Jiayi He, Tianwei Cheng, Shuai Li, Aimin Hao, Ho
 
 System: Windows 10
 
+arxiv: [https://arxiv.org/abs/2312.04814](https://arxiv.org/abs/2312.04814)
+
+DOI: [10.1109/TVCG.2023.3341453](https://ieeexplore.ieee.org/document/10354362)
+
+Latex and presentation: [https://github.com/chunleili/nonNewtonPaper](https://github.com/chunleili/nonNewtonPaper)
+
 ## Automactic scripts for replication
 
 You **only need** to run the `auto.py` if you want to verify the replicability.
