@@ -26,7 +26,7 @@
 #include "Utilities/Logger.h"
 
 
-#include "SPlisHSPlasH\My\Interactive\Interactive.h"
+#include "SPlisHSPlasH/My/Interactive/Interactive.h"
 
 using namespace SPH;
 

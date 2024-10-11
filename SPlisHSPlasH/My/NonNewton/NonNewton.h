@@ -88,7 +88,7 @@ namespace SPH
 		inline static int AVG_VISCOSITY = -1;
 		inline static int MIN_VISCOSITY = -1;
 
-		inline static int NON_NEWTON_METHOD;
+		inline static int NON_NEWTON_METHOD=-1;
 		inline static int NEWTONIAN_ = -1;
 		inline static int POWER_LAW_ = -1;
 		inline static int CROSS_ = -1;
@@ -120,7 +120,7 @@ namespace SPH
         static NonPressureForceBase* creator(FluidModel* model) {return new NonNewton(model);}
 
 		std::vector<float>& getViscosity() { return m_nonNewtonViscosity; }
-		void NonNewton::smoothStrainRate();
+		void smoothStrainRate();
 
 		unsigned int numParticles;
 	};

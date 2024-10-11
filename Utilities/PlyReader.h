@@ -10,7 +10,7 @@ namespace Utilities
 	class PlyReader
 	{
 	public:
-		static bool PlyReader::readParticles(const std::string &fileName, const Vector3r &translation, const Matrix3r &rotation, const Real scale, std::vector<Vector3r> &positions, std::vector<Vector3r> &velocities);
+		static bool readParticles(const std::string &fileName, const Vector3r &translation, const Matrix3r &rotation, const Real scale, std::vector<Vector3r> &positions, std::vector<Vector3r> &velocities);
 	};
 
 }

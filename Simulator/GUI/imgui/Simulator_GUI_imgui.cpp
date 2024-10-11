@@ -14,7 +14,7 @@
 #include "imgui_impl_opengl3.h"
 
 
-#include "SPlisHSPlasH\My\Interactive\Interactive.h" 
+#include "SPlisHSPlasH/My/Interactive/Interactive.h" 
 
 using namespace SPH;
 using namespace Utilities;

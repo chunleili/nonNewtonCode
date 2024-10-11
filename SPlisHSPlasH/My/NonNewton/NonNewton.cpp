@@ -63,7 +63,10 @@ void NonNewton::initParameters()
 	getParameter(AVG_VISCOSITY)->setReadOnly(true);
 	getParameter(MIN_VISCOSITY)->setReadOnly(true);
 
-	NON_NEWTON_METHOD = createEnumParameter("nonNewtonMethod", "nonNewtonMethod", &(int)m_nonNewtonMethod);
+	
+	int tempNonNewtonMethod = static_cast<int>(m_nonNewtonMethod);
+	NON_NEWTON_METHOD = createEnumParameter("nonNewtonMethod", "nonNewtonMethod", &tempNonNewtonMethod);
+	m_nonNewtonMethod = static_cast<NonNewtonMethod>(tempNonNewtonMethod);
 	setGroup(NON_NEWTON_METHOD, "Viscosity");
 	setDescription(NON_NEWTON_METHOD, "Method for nonNewton.");
 	EnumParameter *enumParam = static_cast<EnumParameter*>(getParameter(NON_NEWTON_METHOD));

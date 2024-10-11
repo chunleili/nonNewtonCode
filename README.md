@@ -102,3 +102,14 @@ Some may encounter the compiling issues when using the latest vs2022(version 17.
 
 ## Extra
 This code is based on the Jan Bender's: https://github.com/InteractiveComputerGraphics/SPlisHSPlasH 
+
+
+## Install on Linux
+Ubuntu 22.04(WSL1) is tested.
+```
+cmake -B build -DCMAKE_BUILD_TYPE=Release
+cmake --build build -j 8
+```
+```
+./bin/SPHSimulator --no-gui --scene-file ../data/MyScenes/ramp1.json --no-initial-pause
+```
