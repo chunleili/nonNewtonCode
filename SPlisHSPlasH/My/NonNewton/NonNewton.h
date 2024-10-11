@@ -39,8 +39,8 @@ namespace SPH
 		void controlledByTemperature();
 		Real FNorm(const Vector6r& vec) const;
 	public:
-	    enum NonNewtonMethod { ENUM_NEWTONIAN=0, ENUM_POWER_LAW, ENUM_CROSS_MODEL, ENUM_CASSON_MODEL, ENUM_CARREAU, ENUM_BINGHAM, ENUM_HERSCHEL_BULKLEY};
-		NonNewtonMethod m_nonNewtonMethod = ENUM_NEWTONIAN;
+	    // enum NonNewtonMethod { ENUM_NEWTONIAN=0, ENUM_POWER_LAW, ENUM_CROSS_MODEL, ENUM_CASSON_MODEL, ENUM_CARREAU, ENUM_BINGHAM, ENUM_HERSCHEL_BULKLEY};
+		int m_nonNewtonMethod = 0;
 
 		std::vector<Vector6r> m_strainRate;
 		std::vector<float> m_strainRateNorm;

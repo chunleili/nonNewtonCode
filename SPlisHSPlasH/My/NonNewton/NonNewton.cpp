@@ -64,9 +64,7 @@ void NonNewton::initParameters()
 	getParameter(MIN_VISCOSITY)->setReadOnly(true);
 
 	
-	int tempNonNewtonMethod = static_cast<int>(m_nonNewtonMethod);
-	NON_NEWTON_METHOD = createEnumParameter("nonNewtonMethod", "nonNewtonMethod", &tempNonNewtonMethod);
-	m_nonNewtonMethod = static_cast<NonNewtonMethod>(tempNonNewtonMethod);
+	NON_NEWTON_METHOD = createEnumParameter("nonNewtonMethod", "nonNewtonMethod", &(m_nonNewtonMethod));
 	setGroup(NON_NEWTON_METHOD, "Viscosity");
 	setDescription(NON_NEWTON_METHOD, "Method for nonNewton.");
 	EnumParameter *enumParam = static_cast<EnumParameter*>(getParameter(NON_NEWTON_METHOD));
@@ -318,31 +316,39 @@ void NonNewton::step()
 	// 	dampVelocity();
 }
 
+
+// m_nonNewtonMethod = 0 时，使用牛顿粘性模型
+// m_nonNewtonMethod = 1 时，使用Power law粘性模型
+// m_nonNewtonMethod = 2 时，使用Cross模型
+// m_nonNewtonMethod = 3 时，使用Casson模型
+// m_nonNewtonMethod = 4 时，使用Carreau模型
+// m_nonNewtonMethod = 5 时，使用Bingham模型
+// m_nonNewtonMethod = 6 时，使用Herschel-Bulkley模型
 void NonNewton::computeNonNewtonViscosity()
 {
 	calcStrainRate();
 
-	if(m_nonNewtonMethod == NonNewtonMethod::ENUM_POWER_LAW)
+	if(m_nonNewtonMethod == 1)
 	{
 		computeViscosityPowerLaw();
 	}
-	else if(m_nonNewtonMethod == NonNewtonMethod::ENUM_CROSS_MODEL)
+	else if(m_nonNewtonMethod == 2)
 	{
 		computeViscosityCrossModel();
 	}
-	else if (m_nonNewtonMethod == NonNewtonMethod::ENUM_CASSON_MODEL)
+	else if (m_nonNewtonMethod == 3)
 	{
 		computeViscosityCassonModel();
 	}
-	else if (m_nonNewtonMethod == NonNewtonMethod::ENUM_CARREAU)
+	else if (m_nonNewtonMethod == 4)
 	{
 		computeViscosityCarreau();
 	}
-	else if (m_nonNewtonMethod == NonNewtonMethod::ENUM_BINGHAM)
+	else if (m_nonNewtonMethod == 5)
 	{
 		computeViscosityBingham();
 	}
-	else if (m_nonNewtonMethod == NonNewtonMethod::ENUM_HERSCHEL_BULKLEY)
+	else if (m_nonNewtonMethod == 6)
 	{
 		computeViscosityHerschelBulkley();
 	}
@@ -366,6 +372,7 @@ void NonNewton::computeViscosityNewtonian()
 
 void NonNewton::computeViscosityPowerLaw() 
 {
+	std::cout<<"computeViscosityPowerLaw!\n";
 	for (unsigned int i = 0; i < numParticles; ++i)
 	{
 		m_nonNewtonViscosity[i] = consistency_index * pow(m_strainRateNorm[i], power_index - 1);
@@ -374,6 +381,7 @@ void NonNewton::computeViscosityPowerLaw()
 
 void NonNewton::computeViscosityCrossModel() 
 {
+	std::cout<<"computeViscosityCrossModel!\n";
 	assert((m_viscosity0 - m_viscosity_inf >= 0.0) && "the viscosity0 must be larger than viscosity_inf");
 	if(m_viscosity0 - m_viscosity_inf < 0.0)
 	{
@@ -389,6 +397,7 @@ void NonNewton::computeViscosityCrossModel()
 
 void NonNewton::computeViscosityCassonModel() 
 {
+	std::cout<<"computeViscosityCassonModel!\n";
 	for (unsigned int i = 0; i < numParticles; ++i)
 	{
 		float res = sqrt(m_muC) +  sqrt(m_yieldStress / m_strainRateNorm[i]);
@@ -399,6 +408,7 @@ void NonNewton::computeViscosityCassonModel()
 
 void NonNewton::computeViscosityCarreau() 
 {
+	std::cout<<"computeViscosityCarreau!\n";
 	for (unsigned int i = 0; i < numParticles; ++i)
 	{
 		m_nonNewtonViscosity[i] = m_viscosity_inf +  (m_viscosity0 - m_viscosity_inf) / (1.0f +  pow(consistency_index * m_strainRateNorm[i]*m_strainRateNorm[i], (1.0f - power_index)/2.0f)) ;
@@ -409,6 +419,7 @@ void NonNewton::computeViscosityCarreau()
 
 void NonNewton::computeViscosityBingham() 
 {
+	std::cout<<"computeViscosityBingham!\n";
 	for (unsigned int i = 0; i < numParticles; ++i)
 	{
 		if(m_strainRateNorm[i] < m_criticalStrainRate)
@@ -423,6 +434,7 @@ void NonNewton::computeViscosityBingham()
 
 void NonNewton::computeViscosityHerschelBulkley() 
 {
+	std::cout<<"computeViscosityHerschelBulkley!\n";
 	for (unsigned int i = 0; i < numParticles; ++i)
 	{
 		if(m_strainRateNorm[i] < m_criticalStrainRate)
