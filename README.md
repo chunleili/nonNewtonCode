@@ -10,8 +10,28 @@ arxiv: [https://arxiv.org/abs/2312.04814](https://arxiv.org/abs/2312.04814)
 
 DOI: [10.1109/TVCG.2023.3341453](https://ieeexplore.ieee.org/document/10354362)
 
-Latex and presentation: [https://github.com/chunleili/nonNewtonPaper](https://github.com/chunleili/nonNewtonPaper)
+Paper, Latex and presentation: [https://github.com/chunleili/nonNewtonPaper](https://github.com/chunleili/nonNewtonPaper)
 
+Code: [https://github.com/chunleili/nonNewtonCode](https://github.com/chunleili/nonNewtonCode)
+
+bibtex:
+```
+@article{ nonNewton,
+Author = {Li, Chunlei and Gao, Yang and He, Jiayi and Cheng, Tianwei and Li, Shuai
+   and Hao, Aimin and Qin, Hong},
+Title = {A Unified Particle-Based Solver for Non-Newtonian Behaviors Simulation},
+Journal = {IEEE TRANSACTIONS ON VISUALIZATION AND COMPUTER GRAPHICS},
+Year = {2024},
+Volume = {30},
+Number = {4},
+Pages = {1998-2010},
+Month = {APR},
+DOI = {10.1109/TVCG.2023.3341453},
+ISSN = {1077-2626},
+EISSN = {1941-0506},
+Unique-ID = {WOS:001173975500002},
+}
+```
 ## Automactic scripts for replication
 
 You **only need** to run the `auto.py` if you want to verify the replicability.
