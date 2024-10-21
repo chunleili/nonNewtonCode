@@ -16,7 +16,7 @@ Code: [https://github.com/chunleili/nonNewtonCode](https://github.com/chunleili/
 
 bibtex:
 ```
-@article{ nonNewton,
+@article{nonNewton,
 Author = {Li, Chunlei and Gao, Yang and He, Jiayi and Cheng, Tianwei and Li, Shuai
    and Hao, Aimin and Qin, Hong},
 Title = {A Unified Particle-Based Solver for Non-Newtonian Behaviors Simulation},
